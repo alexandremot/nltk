@@ -9,7 +9,8 @@ from string import punctuation
 
 class Stopwords:
 	def __init__(self):
-		new_stopwords = ["incidente"]
+		# coloque aqui as palavras que pretende desconsiderar na nuvem de palavras (imagem) resultante
+		new_stopwords = [""]
 		self.stopwords = set(stopwords.words('portuguese') + list(punctuation) + list(new_stopwords))
 
 	
@@ -39,7 +40,7 @@ def write_to_file(what_to_print):
 
 
 if __name__ == "__main__":
-	f = codecs.open("words.txt", "r", encoding ="latin-1")
+	f = codecs.open("texto.txt", "r", encoding ="latin-1")
 	text = f.read()
 	palavras = in_natural_language(text)
 	write_to_file(palavras)
